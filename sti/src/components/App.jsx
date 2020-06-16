@@ -3,7 +3,7 @@ import "./styles/app.css";
 import { Input } from "./Input";
 import { List } from "./List";
 import { Input2 } from "./Input2";
-document.cookie
+import {login} from './login'
 import { Button } from "./Button";
 import { itemStore } from "../stores/ItemStore";
 export class App extends React.Component {
@@ -34,7 +34,7 @@ export class App extends React.Component {
     }
 
     render() {
-        if(document.cookie== null){
+        if(login()){
             return(
                 <>
                <Input 

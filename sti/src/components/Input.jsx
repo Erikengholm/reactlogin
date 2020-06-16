@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./styles/Input.css";
 import {login} from './login'
+import {create} from './cookie'
+
 export const Input = (props) => {
     const [txt, setTxt] = useState("");
     const [isFocus, setIsFocus] = useState(false);
-    console.log(document.cookie);
-            if(document.cookie == null){
+            if(login()){
 return (
 
         <div className={"sti-input" + (isFocus ? " focus" : "")}>
@@ -36,7 +37,7 @@ return (
             />
             <button
                 onClick={(event) => {
-                  login(txt,document.getElementById("key").value);
+                  create(txt,document.getElementById("key").value);
                 }}>
                 log in
             </button>
